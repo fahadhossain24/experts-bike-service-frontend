@@ -1,0 +1,26 @@
+.single-service{
+    border: 2px solid #ddd;
+    border-radius: 15px;
+}
+.single-service img{
+    width: 85%;
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+.service-title{
+    margin: 0;
+    font-size: 25px;
+}
+.service-price{
+    margin:0
+}
+.service-description{
+    margin-top: 5px;
+}
+.custom-style-service{
+    background: #e44a58;
+    color: #ffd66c;
+     font-weight: 700;
+    /* color: #d9b800; */
+}

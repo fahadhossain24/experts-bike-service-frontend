@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": "Oil Push",
+        "price": 120,
+        "description": "Oil push service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/522rVsm/crop-man-firing-up-motorcycle-1.png"
+    },
+
+    {
+        "id": 2,
+        "name": "Luse connet",
+        "price": 80,
+        "description": "Luse connet service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/pfdYWpn/man-fixing-motorcycle-modern-workshop-1-1.png"
+    },
+    {
+        "id": 3,
+        "name": "Engin Mechanics",
+        "price": "300",
+        "description": "Engin Mechanics service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/PMf3hv4/man-fixing-motorcycle-modern-workshop-2-1-1.png"
+    },
+    {
+        "id": 4,
+        "name": "Body Fixer",
+        "price": 100,
+        "description": "Body Fixer service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/hmS73g4/man-fixing-motorcycle-modern-workshop-4-1.png"
+    },
+    {
+        "id": 5,
+        "name": "Change Oil",
+        "price": 120,
+        "description": "Oil Change service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/522rVsm/crop-man-firing-up-motorcycle-1.png"
+    },
+    {
+        "id": 6,
+        "name": "Any Need",
+        "price": 120,
+        "description": "Any Need service included for your easy jurney. Our service and we are always concern about customar. You can take this service without any dought. Thanks",
+        "img": "https://i.ibb.co/PMf3hv4/man-fixing-motorcycle-modern-workshop-2-1-1.png"
+    }
+]

@@ -1,0 +1,7 @@
+.register-form input{
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    border: 2px solid #ddd;
+}
