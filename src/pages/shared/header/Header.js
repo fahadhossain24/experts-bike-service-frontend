@@ -19,7 +19,7 @@ const Header = () => {
         <>
             <Navbar sticky='top' collapseOnSelect expand="lg" bg='dark' variant="dark">
                 <Container>
-                    <Navbar.Brand  href="/#nav" style={{height: '55px', width: '100px'}}>
+                    <Navbar.Brand href="/#nav" style={{ height: '55px', width: '100px' }}>
                         <img src={logo} className='h-100 w-100' alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,12 +40,19 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
+                            {
+                                user && <>
+                                    <Nav.Link as={Link} to="/addservice">Add</Nav.Link>
+                                    <Nav.Link as={Link} to="/manage">Manage</Nav.Link>
+                                    <Nav.Link as={Link} to="/orders">Orders</Nav.Link>
+                                </>
+                            }
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             {
                                 user ?
-                                <button onClick={handleSignOut} className='btn btn-link text-decoration-none text-white'>Signout</button>
-                                :
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                    <button onClick={handleSignOut} className='btn btn-link text-decoration-none text-white'>Signout</button>
+                                    :
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>

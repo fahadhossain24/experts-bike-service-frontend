@@ -5,7 +5,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../../firebase.init';
 import Loading from '../../shared/loading/Loading';
 import SocialLogin from '../socialLogin/SocialLogin';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -14,8 +14,8 @@ const Register = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate()
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    const [updateProfile, updating] = useUpdateProfile(auth);
     const [checked, setChecked] = useState(false);
 
 
@@ -57,7 +57,6 @@ const Register = () => {
             </form>
             <p>Already have an account? <Link className='text-decoration-none text-danger' to='/login'>please login</Link> </p>
             <SocialLogin></SocialLogin>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };
