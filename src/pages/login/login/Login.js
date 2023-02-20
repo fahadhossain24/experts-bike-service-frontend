@@ -19,36 +19,54 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     let errorElement;
-    if(error || resetPassError){
+    if (error || resetPassError) {
         errorElement = <p className='text-danger'>{error?.message}</p>
     }
-    
-    if(user){
-        navigate(from, {replace: true}); 
-    }
-    
-    if(loading){
+
+    // if (user) {
+        // navigate(from, { replace: true });
+    // }
+
+    if (loading) {
         return <Loading></Loading>
     }
 
     // handle user login
-    const handleLogin = (e) => {
+    const handleLogin = async(e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+
+        const url = 'http://localhost:5000/login';
+        await fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({email})
+        })
+        .then(res => res.json())
+        .then(data => {
+            localStorage.setItem('accessToken', data.accessToken);
+            navigate(from, { replace: true });
+        })
+
+
+
+
 
     }
 
     // handle forget password
     const handleForgetPasswordWithReset = () => {
         const email = emailRef.current.value;
-        if(email){
+        if (email) {
             sendPasswordResetEmail(email);
             toast('Password reset mail sended. Please check mail box');
         }
-        else{
+        else {
             toast('please enter an email address');
         }
     }
@@ -65,7 +83,7 @@ const Login = () => {
                 <Button onClick={handleLogin} className='w-50 d-block mx-auto' style={{ backgroundColor: '#e44a58' }} type="submit">Login</Button>
             </Form>
             {errorElement}
-            <p>Don't remember password? <span onClick={handleForgetPasswordWithReset} className='text-danger' style={{cursor: 'pointer'}}>Forget password</span></p>
+            <p>Don't remember password? <span onClick={handleForgetPasswordWithReset} className='text-danger' style={{ cursor: 'pointer' }}>Forget password</span></p>
             <p>Dosen't have an account? <Link to='/register' className='text-decoration-none text-danger'>Go for register</Link> </p>
             <SocialLogin></SocialLogin>
         </div>
